@@ -1,50 +1,46 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <!-- <title>Custom Modal Box | CodingNepal</title> -->
-      <link rel="stylesheet" href="css/captcha.css">
-      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   </head>
-   <body>
-      <div class="show-btn">
-         <button>Show Modal</button>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detect AdBlock using JavaScript | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div id="detect"></div>
+  <div class="wrapper">
+    <div class="content">
+      <div class="warn-icon">
+        <span class="icon"><i class="fas fa-exclamation"></i></span>
       </div>
-      <div class="modal">
-         <div class="top-content">
-            <div class="left-text">
-               Modal Box
-            </div>
-            <span class="close-icon"><i class="fas fa-times"></i></span>
-            <div class="fas fa-camera-retro"></div>
-         </div>
-         <div class="bottom-content">
-            <div class="text">
-               Custom Modal Box
-            </div>
-            <p>
-               Create a simple modal box using html and css only.
-            </p>
-            <div class="close-btn">
-               <button>Close Modal</button>
-            </div>
-         </div>
+      <h2>AdBlock Detected!</h2>
+      <p>Our website is made possible by displaying ads to our visitors. Please supporting us by whitelisting our website.</p>
+      <div class="btn">
+        <div class="bg-layer"></div>
+        <button>Okay, I'll Whitelist</button>
       </div>
-      <script>
-         $('.show-btn').click(function(){
-           $('.modal').toggleClass("show");
-           $('.show-btn').addClass("disabled");
-         });
-         $('.close-icon').click(function(){
-           $('.modal').toggleClass("show");
-           $('.show-btn').removeClass("disabled");
-         });
-         $('.close-btn').click(function(){
-           $('.modal').toggleClass("show");
-           $('.show-btn').removeClass("disabled");
-         });
-      </script>
-   </body>
+    </div>
+  </div>
+
+  <script>
+    const detect = document.querySelector("#detect");
+    const wrapper = document.querySelector(".wrapper");
+    const button = wrapper.querySelector("button");
+
+    let adClasses = ["ad", "ads", "adsbox", "doubleclick", "ad-placement", "ad-placeholder", "adbadge", "BannerAd"];
+    for(let item of adClasses){
+      detect.classList.add(item);
+    }
+    let getProperty = window.getComputedStyle(detect).getPropertyValue("display");
+    if(!wrapper.classList.contains("show")){
+      getProperty == "none" ? wrapper.classList.add("show") : wrapper.classList.remove("show");
+    }
+    button.addEventListener("click", ()=>{
+      wrapper.classList.remove("show");
+    });
+  </script>
+
+</body>
 </html>
