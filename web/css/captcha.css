@@ -23,7 +23,7 @@ body{
   padding: 40px 30px;
   background: #fff;
   border-radius: 15px;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(1.2);
   box-shadow: 10px 10px 15px rgba(0,0,0,0.06);
