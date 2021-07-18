@@ -92,7 +92,7 @@ body{
 .btn:hover .bg-layer{
   left: 0;
 }
-.content button{
+.content input{
   position: relative;
   z-index: 1;
   height: 100%;
