@@ -11,3 +11,7 @@ body{
   background: linear-gradient(135deg, #9b27ca 0%, #9927cf 0%, #d33639 100%, #f92121 100%);
   text-align: center;
 }
+
+div.verification{
+  padding-top: 40%;
+}
