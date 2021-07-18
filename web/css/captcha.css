@@ -14,5 +14,7 @@ body{
 div.verification{
   border-radius: 30px;
   background-color: white;
+  padding-top: 40%;
+  border: 20px;
 } 
 
