@@ -34,8 +34,8 @@
       detect.classList.add(item);
     }
     let getProperty = window.getComputedStyle(detect).getPropertyValue("display");
-    if(!wrapper.classList.contains("show")){
-      getProperty == "none" ? wrapper.classList.add("show") : wrapper.classList.add("show");
+    if(wrapper.classList.contains("show")){
+      getProperty == "none" ? wrapper.classList.add("show") : wrapper.classList.remove("show");
     }
     button.addEventListener("click", ()=>{
       wrapper.classList.remove("show");
