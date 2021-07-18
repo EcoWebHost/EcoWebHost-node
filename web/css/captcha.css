@@ -11,14 +11,3 @@ body{
   background: linear-gradient(135deg, #9b27ca 0%, #9927cf 0%, #d33639 100%, #f92121 100%);
   text-align: center;
 }
-
-div.verification{
-  border-radius: 30px;
-  background-color: white;
-  padding-top: 40%;
-  border: 20px;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-} 
-
